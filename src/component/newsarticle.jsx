@@ -1,4 +1,6 @@
 import React from "react";
+import myImg from "../assets/microdata.jpeg";
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const latestNews = [
   {
@@ -29,6 +31,13 @@ const latestNews = [
     date: "12 Jan 2025",
     link: "https://neswara.id/view/empat-provokator-diamankan-dalam-pengosongan-lahan-ptpn-vii",
   },
+  {
+    title: "Inovasi Baru di Tahun 2025: Teknologi AI Membantu Produktivitas Harian",
+    description: "Jakarta, 9 Januari 2025 – Perkembangan teknologi kecerdasan buatan (AI) semakin mempertegas perannya dalam berbagai aspek kehidupan manusia. Tahun ini, inovasi terbaru bernama AI",
+    image: "https://neswara.id/file_manager/berita/1736391139-aii.jpeg",
+    date: "12 Jan 2025",
+    link: "https://neswara.id/view/inovasi-baru-di-tahun-2025-teknologi-ai-membantu-produktivitas-harian",
+  },
 ];
 
 const popularNews = [
@@ -40,29 +49,17 @@ const popularNews = [
 
 const NewsArticle = () => {
   return (
-    <section className="max-w-6xl mx-30 px-4 relative">
-      {/* Kotak Putih Latar Belakang untuk Semua Berita */}
-      <div className="absolute inset-0 bg-white dark:bg-gray-800 shadow-lg rounded-lg -z-10 p-6"></div>
-
-      {/* Saran Berita di Atas Tengah */}
-      {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-2 rounded-lg shadow-md">
-        <h2 className="text-lg font-semibold">Saran Berita</h2>
-      </div> */}
-
-      <div className="grid grid-cols-3 gap-8">
-        {/* Kolom Berita Terbaru */}
-        <div className="col-span-2">
+    <section className="max-w-7xl mx-auto px-4 py-6 relative">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="md:col-span-2">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Berita Terbaru</h2>
           <div className="space-y-4">
             {latestNews.map((news, index) => (
-              <article key={index} className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md flex items-start space-x-6">
-                {/* Gambar di kiri */}
-                <div className="w-48 h-48 flex-shrink-0">
+              <article key={index} className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md flex flex-col md:flex-row items-start space-x-0 md:space-x-6">
+                <div className="w-full md:w-1/3 h-40 flex-shrink-0">
                   <img src={news.image} alt="News Thumbnail" className="w-full h-full object-cover rounded-lg" />
                 </div>
-
-                {/* Judul & Deskripsi di kanan */}
-                <div className="flex flex-col justify-between flex-grow">
+                <div className="flex flex-col justify-between flex-grow mt-4 md:mt-0">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                     <a href={news.link} className="hover:text-primary transition duration-200">
                       {news.title}
@@ -75,10 +72,12 @@ const NewsArticle = () => {
             ))}
           </div>
         </div>
-
-        {/* Kolom Popular Now (di dalam kotak putih) */}
         <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Popular Now</h2>
+          <div className="grid place-items-center">
+            <img src={myImg} alt="Centered" className="object-cover w-60 max-w-xs" />
+          </div>
+          <p className="text-gray-400 font-bold text-center m-5 text-2xl">Microdata Indonesia</p>
+          <h2 className="text-xl text-center font-bold text-gray-900 dark:text-white mb-4">Popular Now</h2>
           <div className="space-y-4">
             {popularNews.map((news, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
@@ -93,6 +92,19 @@ const NewsArticle = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-8">
+            <p className="text-center font-bold text-gray-400">FOLLOW @NESWARA</p>
+            <div className="flex flex-col space-y-2">
+              <input id="email" type="email" placeholder="your email" className="w-full p-2 border rounded-lg" />
+              <button className="mt-2 p-2 bg-black text-white rounded-lg hover:bg-gray-600">SUBSCRIBE NOW</button>
+            </div>
+            <div className="flex space-x-4 mt-4 justify-center">
+              <FaFacebook className="text-gray-400 hover:text-black" size={30} />
+              <FaTwitter className="text-gray-400 hover:text-black" size={30} />
+              <FaInstagram className="text-gray-400 hover:text-black" size={30} />
+              <FaYoutube className="text-gray-400 hover:text-black" size={30} />
+            </div>
           </div>
         </div>
       </div>

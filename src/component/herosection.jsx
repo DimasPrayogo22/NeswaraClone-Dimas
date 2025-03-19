@@ -1,5 +1,4 @@
 import React from "react";
-import myImage from "../assets/hero-image.jpg";
 
 const HeroSection = () => {
   return (
@@ -7,14 +6,15 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={myImage} // Sesuaikan dengan path gambar Anda
+          src="https://neswara.id/assets/frontend/images/avatars/journalist.jpg" // Sesuaikan dengan path gambar Anda
           alt="News Reporter"
+          height={800}
           className="w-full h-full object-cover opacity-80"
         />
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-start justify-center h-full px-6 md:px-16 text-white">

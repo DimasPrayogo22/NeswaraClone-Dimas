@@ -21,7 +21,7 @@ const LiveNewsSection = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Main News Box */}
           <div className="bg-gray-900 w-full md:w-2/3 h-64 md:h-80 rounded-lg relative p-6">
-            {/* Judul berita utama */}
+            {/* Judul berita utama */}  
             <h2 className="text-lg md:text-2xl font-bold">
               BALANCING WORK AND WELLNESS: TECH SOLUTIONS...
             </h2>
